@@ -1,0 +1,58 @@
+.confirm-item-outcontainer{
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  margin: 0px auto;
+  
+}
+.confirm-item-incontainer{
+  background-color: #fff;
+  width: 90%;
+  border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
+  margin: 0px auto;
+  position: relative;
+}
+.confirm-item-incontainer .left{
+  display: flex;
+  flex-direction: column;
+}
+.confirm-item-incontainer .left .zh-name{
+  display: block;
+  color:#4A4A4A;
+  font-size: 28rpx;
+}
+.confirm-item-incontainer .left .en-name{
+  display: block;
+  color:#9B9B9B;
+  font-size: 28rpx;
+}
+.confirm-item-incontainer .left .money{
+  display: block;
+  color:#F01A15 ;
+  font-size: 28rpx;
+}
+.confirm-item-incontainer .right{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 100rpx;
+  line-height: 100rpx;
+  overflow: hidden;
+  float: right;
+}
+.confirm-icon{
+  line-height: 100rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 10px;
+}
+.confirm-item-incontainer .right .num{
+  display: block;
+  width: 50rpx;
+  font-size: 32rpx;
+   line-height: 90rpx;
+  text-align: center;
+}

@@ -1,0 +1,165 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="dwss">
+      <image class="dw" src="../../images/mapfff.svg"></image>
+      <view class="search">
+        <icon class="icon" type="search" size="15"></icon>
+        <input class="ipt" placeholder='麻婆豆腐' value="{{searchinput}}"></input>
+        <icon type="clear" class="icon1" size="15" bindtap='BeginSearch' />
+      </view>
+      <view class="search-btn">搜索</view>
+    </view>
+  </view>
+
+  <!-- <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view> -->
+
+  <view class="goods" style="height:{{height-40-45}}px;margin-top:45px;">
+    <view class="weui-tab">
+      <scroll-view scroll-y style="position:fixed;z-index:400;width:20%;height:{{height-40-45}}px;background:#eeeeee;">
+        <view class="swiper-tab" style="white-space:nowrap;">
+          <view class="swiper-tab-item {{activeIndex==item.gtId?'active':''}}" wx:for="{{category}}" bindtap="changeTab" data-id="{{item.gtId}}" data-index="{{'a'+item.gtId}}">{{item.gtName}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- <swiper current='{{activeIndex}}' bindchange="swiperTab" style="height:{{height-40-45}}px; background:#fff;width:75%;float:right;">        
+               <swiper-item  wx:for="{{category}}" style="overflow:auto"> -->
+    <view class="sp-tab" style="height:{{height-40-45}}px; background:#fff;width:80%;float:right;">
+      <scroll-view scroll-y="true" style="height:100%;" scroll-into-view="{{scrId}}" bindscroll="onGoodsScroll" bindscrolltolower="onReachBottom" bindscrolltoupper="onReachBottom">
+        <view wx:for="{{category}}" wx:for-item="citem" id="{{'a'+citem.gtId}}">
+          <view class="title">{{citem. gtName}}</view>
+          <view class="swiper-item weui-tab__content" wx:for="{{product}}">
+            <block wx:if="{{citem.gtId == item.goodsType }}">
+              <view class="contain" data-index="{{index}}" bindtap='hide'>
+                <view class="list-title">{{item.goodsName}}
+                  <image class="font-hot" src="{{item.huobao}}"></image>
+                  <text class="list-szie">￥{{item.goodsXj}}</text>
+                </view>
+
+                <view class="list-font">
+                  <text>{{item.goodsEnName}}</text>
+                </view>
+
+                <view class="detail" data-id="{{item.tuijian}}" wx:if="{{item.tuijian != 0}}">
+                  <view class="time-left">
+                    <image class="time-image" src="{{item.goodsImg}}"></image>
+                    <view class="time-title">
+                      <text style="padding-left:10rpx;">{{item.commons}}</text>
+                    </view>
+                  </view>
+                </view>
+
+
+              </view>
+            </block>
+            <block wx:if="{{citem.gtId == item.goodsType }}">
+              <view class="number">
+
+                <block wx:if="{{item.num>0}}">
+
+                  <view class="reduce" bindtap="reduceItems" data-index="{{index}}">
+                    <image class="font-iamge" src="../../images/deletered.svg"></image>
+                  </view>
+                  <view class="num" id="num{{item.num}}">
+                    {{item.num}}
+                  </view>
+                </block>
+                <view class="reduceadd" bindtap="addItems" data-index="{{index}}">
+                  <view class="red-outall"  bindtap="onClickImage">
+                  <image class="font-iamge" src="../../images/addred.svg"></image>
+                   <view wx:if="{{item.red==false}}" animation="{{animationData}}" id="ball-hook"  class="ball-hook"></view> 
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 
+                </swiper-item>
+                
+                    </swiper> -->
+  </view>
+</view>
+
+<!--shopCart-->
+
+<view class=".modal-box" bindtap='show' style="display:{{cartShow}}"></view>
+<view class="shopCart">
+  <view class="foot-text" bindtap="show">
+    <view class="foot-szie">订单详情</view>
+    <button class="sear-btn" bindtap="setbtn">下单</button>
+    <view class="foot-title" style="{{style_img}}">共{{totalCount}}份,总计:
+      <text class="font-red">{{totalPrice}}</text>
+      <text class="text-red">元</text>
+    </view>
+    <view class="hongd" style="display:{{catyShow}}">{{totalCount}}</view>
+  </view>
+  <view class="shopcart-list" style="display:{{cartShow}}">
+    <view class="foot-header">
+      <view class="foot-szie">已选商品:</view>
+      <view class=" iconfont icon-jia cart-add " style="color:#00A0DC; " data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="addCart"></view>
+
+      <view class="foot-seler" bindtap="selectList">清空</view>
+      <image class="font-img" src="../../images/clear.png" bindtap="selectList"></image>
+    </view>
+    <scroll-view scroll-y class="list-scroll">
+      <view class="list-content">
+
+        <view class="swiper-item weui-tab__content" wx:for="{{product}}">
+
+          <view class="contain1" data-id="{{item.goodsId}}" bindtap="tigger" wx:if="{{item.num>0}}">
+            <view class="list-title-s">{{item.goodsName}}</view>
+            <view class="number">
+              <view class="reduce" bindtap="reduceItems" data-index="{{index}}">
+                <image class="font-iamge" src="../../images/delete.svg"></image>
+              </view>
+              <view class="num">
+                {{item.num}}
+              </view>
+
+              <view class="reduceadd" bindtap="addItems" data-index="{{index}}">
+                <image class="font-iamge" src="../../images/add.svg"></image>
+              </view>
+            </view>
+            <view class="list-font_s">
+              <text>{{item.goodsEnName}}</text>
+            </view>
+            <view class="list-red">
+              <text>￥{{item.goodsXj}}元 / {{item.goodsUnit}}</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+
+  </view>
+</view>
+
+<!-- 弹框 -->
+<view class="drawer_screen" bindtap='hide' style="display:{{cartHide}}"></view>
+
+<view class="spxj" wx:if="{{showArr==item.goodsId}}" wx:for="{{product}}" style="display:{{cartHide}}">
+  <view class="imgs">
+    <image src="{{item.goodsImg}}" class="images"></image>
+  </view>
+  <view class="zhaop">
+    <button class="zp">招牌</button>
+    <view class="name">{{item.goodsName}}</view>
+  </view>
+  <view class="xiaol">
+    <text style="padding-left:20rpx">月售2717份</text>
+    <text style="padding-left:10rpx">好评率99%</text>
+  </view>
+  <view class="jg">
+    <text class="xj">￥{{item.goodsXj}}</text>
+    <button class="button" data-index="{{index}}" bindtap='shopping'>加入购物车</button>
+  </view>
+
+  <image src="../../images/clear.svg" class="shanc" bindtap='hide' style="display:{{cartHide}}"></image>
+</view>

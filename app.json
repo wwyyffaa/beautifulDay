@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/settlement/settlement",
+    "pages/confirm/confirm",
+    "pages/commom/commom",
+    "pages/ditu/ditu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5E4E54",
+    "navigationBarTitleText": "外婆家",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#F01A15",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "菜单",
+        "iconPath": "images/share.png",
+        "selectedIconPath": "images/allred.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/listred.png"
+      }
+    ],
+    "position": "bottom"
+  }
+}

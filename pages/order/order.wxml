@@ -1,0 +1,128 @@
+<block wx:if="{{addC}}">
+  <!-- 总体布局 -->
+  <scroll-view class="warp" scroll-y="{{true}}" style="height:{{height-40}}px">
+    <!-- 头部布局 -->
+    <view class="header">
+      <view class="title">
+        <text>我的菜单</text>
+        <text></text>
+        <text class="xz1">共计{{numSum}}份，总计:</text>
+        <text class="dz1">{{priceSum}}</text>
+        <text class="dw1">元</text>
+      </view>
+      <view class="dd">
+        <text>订单编号：{{orderNum}}</text>
+        <text>订单状态：{{orderState}}</text>
+        <text>下单时间：{{orderTime}}</text>
+      </view>
+    </view>
+    <!-- 列表项 -->
+    <view class="list">
+
+      <block wx:for="{{order}}">
+        <view wx:if="{{item.num}}" class="list-item">
+          <view class="npic">
+            <text class="pname">{{item.goodsName}}</text>
+            <text class="pename">{{item.goodsEnName}}</text>
+            <text class="price">{{item.goodsXj}}元/{{item.goodsUnit}}</text>
+          </view>
+          <view class="add">
+            <button disabled="{true}" data-index="{{item.goodsId}}" bindtap='jian' class="disbtn"><text class="j">-</text></button>
+            <text id="num{{item.num}}" class="num">{{item.num}}</text>
+           <button data-list="1" data-id="{{item.goodsId}}" bindtap='jia' class="btn1">+</button>
+          </view>
+        </view>
+      </block>
+      <view class="btnwarp">
+        <text bindtap='moreAdd' class="btncc">去首页加菜</text>
+      </view>
+
+    </view>
+
+    <block wx:if="{{newaddDishList.length>0}}">
+      <view class="header">
+        <view class="title">
+          <text>加菜菜单({{addC}})</text>
+          <text></text>
+          <text class="xz1">共计{{addNumSum}}份，总计:</text>
+          <text class="dz1">{{addPriceSum}}</text>
+          <text class="dw1">元</text>
+        </view>
+      </view>
+      <view class="list">
+        <block wx:for="{{newaddDishList}}">
+          <view class="list-item">
+            <view class="npic">
+              <text class="pname">{{item.goodsName}}</text>
+              <text class="pename">{{item.goodsEnName}}</text>
+              <text class="price">{{item.goodsXj}}元/{{item.goodsUnit}}</text>
+            </view>
+            <view class="add">
+              <button data-index="{{index}}" class="btn1" bindtap='jian'><text class="j">-</text></button>
+              <text class="num">{{item.num}}</text>
+              <button data-id="{{item.goodsId}}" data-list="2" data-index="{{index}}" bindtap='jia' class="btn1">+</button>
+            </view>
+          </view>
+        </block>
+        <view>
+            <text bindtap='goadd' class=" mglf10 btncc">确认加菜</text>
+            <text bindtap='moreAdd' class="mglf10 btncc">更多加菜</text>
+            <text bindtap="clearAll" class="mglf10 btncc">清空</text>
+        </view>
+      </view>
+    </block>
+
+
+    <!-- 加菜菜单 -->
+    <block wx:if="{{addC>1}}">
+
+      <block wx:for="{{addOrderList}}">
+
+        <view class="header">
+          <view class="title">
+            <text>加菜菜单({{item.addC-1}})</text>
+            <text></text>
+            <text class="xz1">共计{{item.addNum}}份，总计:</text>
+            <text class="dz1">{{item.addSum}}</text>
+            <text class="dw1">元</text>
+          </view>
+        </view>
+        <!-- 判断是否显示 -->
+          <view class="list">
+            <block wx:for="{{item.addList}}">
+            <view class="list-item" wx:if="{{item.num}}">
+              <view class="npic">
+                <text class="pname">{{item.goodsName}}</text>
+                <text class="pename">{{item.goodsEnName}}</text>
+                <text class="price">{{item.goodsXj}}元/{{item.goodsUnit}}</text>
+              </view>
+              <view class="pnum">
+                {{item.num}} 份
+              </view>
+            </view>
+            </block>
+            <view class="btnwarp">
+              <text bindtap='moreAdd' class="btncc">去首页加菜</text>
+            </view>
+          </view>
+      </block>
+
+
+    </block>
+
+
+  </scroll-view>
+    <view class="footer">
+      <text bindtap='gojs' class="js">去结算</text>
+      <view class="sum">
+        <text class="xz">共计{{allNum}}份，总计:</text>
+        <text class="dz">{{allSum}}</text>
+        <text class="dw">元</text>
+      </view>
+    </view>
+</block>
+<block wx:else>
+  <view class="zwdd" bindtap='moreAdd'>
+    <image src="/images/kong.svg" style="width:100%;height:800rpx"></image>
+  </view>
+</block>

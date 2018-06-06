@@ -1,0 +1,23 @@
+<!--pages/settlement/settlement.wxml-->
+
+<!-- 正式页面 -->
+<view class="confirm-container">
+  <view class="confirm-nav">
+    <view class="confirm-innav">
+      <text>本次消费(元):</text>
+    </view>
+  </view>
+</view>
+<!-- 中间主体区 -->
+<view class="mian-all">
+  <view class="mian-inall">
+    <text>{{allSum}}</text>
+  </view>
+  <view class="settlement-my" catchtap="onPostList">
+    <text>我要结算</text>
+  </view>
+  <view class="settlement-back" catchtap="onBackList">
+    <text>返回订单详情</text>
+    <image class="icon" src="/images/back.svg"></image>
+  </view>
+</view>

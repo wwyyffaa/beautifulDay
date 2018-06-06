@@ -1,0 +1,204 @@
+
+.warp{
+  display: flex;
+  flex-direction: column;
+}
+/* 头部布局 */
+.header{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #F8F8F8;
+  padding-left: 31rpx;
+}
+.title{
+  color: #4a4a4a;
+  padding-right: 50rpx;
+  font-size: 32rpx;
+}
+.dd{
+  padding-top: 17rpx;
+  line-height: 25rpx;
+  color: #9f9f9f;
+  float: right;
+  font-size: 18rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 列表布局 */
+.list{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.list-item{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+}
+.npic{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 120rpx;
+}
+.pname{
+  font-size: 28rpx;
+}
+.pename{
+  color: #a3a3a3;
+  font-size: 28rpx;
+}
+.price{
+  font-size: 28rpx;
+  color: #f01a15;
+}
+.pnum{
+  font-size: 28rpx;
+  line-height: 120rpx;
+}
+.add{
+  display: flex;
+  flex-direction: row;
+  padding-top: 50rpx;
+}
+.num{
+  font-size: 40rpx;
+  display: block;
+  padding: 0 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.btn1{
+  padding: 0;
+  margin: 0;
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 40rpx;
+  line-height: 43rpx;
+  background-color: #fff;
+  font-weight: bold;
+  color: #f01a15;
+  border-radius: 50%;
+  border: 1px solid #f01a15;
+}
+.btn2{
+  padding: 0;
+  margin: 0;
+  width: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  background-color: #fff;
+  font-weight: bold;
+  color: #ff641a;
+  border: 1px solid #ff641a;
+}
+.disbtn{
+  padding: 0;
+  margin: 0;
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+  line-height: 43rpx;
+  font-weight: bold;
+  color: #9b9b9b;
+  border-radius: 50%;
+  border: 1px solid #9b9b9b;
+}
+
+/* 总计 */
+.sum{
+  text-align: right;
+  float: right;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.xz{
+  font-size: 28rpx;
+}
+.dz{
+  padding: 0 10rpx;
+  font-size: 44rpx;
+  color: red;
+}
+.dw{
+  font-size: 30rpx;
+  color: red;
+}
+
+/* 小总计 */
+.xz1{
+  padding-left: 10rpx;
+  font-size: 20rpx;
+}
+.dz1{
+  padding: 0 10rpx;
+  font-size: 30rpx;
+  color: red;
+}
+.dw1{
+  font-size: 20rpx;
+  color: red;
+}
+
+
+
+
+/* 底部布局 */
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: gainsboro;
+  width: 100%;
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 80rpx;
+}
+.js{
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  display: block;
+  height:80rpx;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  float: right;
+  margin-left: 10rpx;
+}
+.btnwarp{
+  width: 100%;
+  margin: 0 auto;
+}
+.btncc{
+  margin-top:10rpx;
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #9b9b9b;
+  border: 1px solid #9b9b9b;
+  float: right;
+  padding: 0 10rpx;
+}
+.mglf10{
+  margin-left: 10rpx;
+}
+
+.zwdd{
+  text-align: center;
+  font-size: 80rpx;
+}
+.j{
+  font-size: 50rpx;
+  font-weight: bold;
+}

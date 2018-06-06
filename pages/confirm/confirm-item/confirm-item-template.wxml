@@ -1,0 +1,17 @@
+<template name="postItem">
+  <!-- 多页面复用 -->
+  <view class="confirm-item-outcontainer" wx:if="{{num}}">
+    <view class="confirm-item-incontainer">
+      <view class="left">
+        <text class="zh-name">{{goodsName}}</text>
+        <text class="en-name">{{goodsEnName}}</text>
+        <text class="money">{{goodsXj+"元/"+goodsUnit}}{{idx}}</text>
+      </view>
+      <view class="right">
+        <image bindtap="bindMinus" data-goodsid="{{goodsId}}" class="confirm-icon" src="/images/deletered.svg"></image>
+        <text class="num">{{num}}</text>
+        <image bindtap="bindPlus" data-goodsid="{{goodsId}}" class="confirm-icon" src="/images/addred.svg"></image>
+      </view>
+    </view>
+  </view>
+</template>

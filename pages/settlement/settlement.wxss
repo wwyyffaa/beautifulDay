@@ -1,0 +1,81 @@
+/* pages/settlement/settlement.wxss */
+
+/* 头部 */
+
+.confirm-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #f8f8f8;
+}
+
+.confirm-nav {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  /* padding:0rpx 20rpx; */
+  color: #4a4a4a;
+}
+
+.confirm-nav .confirm-innav {
+  width: 90%;
+  margin: 0px auto;
+  font-size:32rpx;
+}
+
+view {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 中间主体 */
+
+.mian-all {
+  display: block;
+  width: 100%;
+}
+
+.mian-inall {
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.mian-inall text {
+  font-size: 72rpx;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+.settlement-my {
+  display: block;
+  clear: both;
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0px auto;
+  background-color: #f01a15;
+  color: #fff;
+  font-size: 32rpx;
+  letter-spacing: 5px;
+}
+
+.settlement-back {
+  display: block;
+  clear: both;
+  width: 90%;
+  margin: 10px auto;
+  font-size: 36rpx;
+  text-align: center;
+  color: #9b9b9b;
+}
+
+.settlement-back .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: -5rpx;
+  font-size: 28rpx;
+}

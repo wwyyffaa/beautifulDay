@@ -1,0 +1,29 @@
+<!--pages/confirm/confirm .wxml-->
+<!-- 引用模版复用数据的相对路径 -->
+<import src="confirm-item/confirm-item-template.wxml" />
+<!-- 正式页面 -->
+<view class="confirm-container">
+  <view class="confirm-nav">
+    <view class="confirm-innav">
+      <text>我的菜单</text>
+    </view>
+  </view>
+
+  <!-- 中间主体区 -->
+  <block wx:for="{{welcomes_key}}" wx:for-item="item" >
+    <view>
+      <!-- template:模版引用 -->
+      <template is="postItem" data-index="{{index}}" data="{{...item}}" />
+    </view>
+<!-- 底部区 -->
+  </block>
+<view class="confirm-button-outbox">
+  <text class="confirm-button" catchtap="onPostTap">提交订单</text>
+  <view class="button-money">
+    <text>共{{totalNum}}份，总计：</text>
+    <text class="money-big">{{totalPrice}}</text>
+    <text>元</text>
+  </view>
+</view>
+</view>
+

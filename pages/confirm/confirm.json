@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#5E4E54",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "提交订单（2号桌）",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}
